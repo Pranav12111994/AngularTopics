@@ -1,0 +1,8 @@
+<app-child *ngIf="!isChildDestroyed" [userName]="userName">
+  <div #contentWrapper>foo</div>
+</app-child>
+<button (click)="updateUser()">updateUser</button>
+<button (click)="destroyComponent()">destroyComponent</button>
+<router-outlet />
+
+<!-- If [userName] is not passed, then onChanges will be called but no value will be logged in it. -->
