@@ -1,0 +1,49 @@
+<!-- Using ng-content in a custom card component -->
+<app-child>
+  <h2>Projected Header</h2>
+  <p>This paragraph is projected into the card component using ng-content.</p>
+</app-child>
+
+<hr />
+
+<!-- Define two templates -->
+<ng-template #firstTemplate>
+  <p>This is the first template content.</p>
+</ng-template>
+
+<ng-template #secondTemplate>
+  <p>This is the second template content.</p>
+</ng-template>
+
+<!-- Button to toggle between templates -->
+<button (click)="toggleTemplate()">Toggle Template</button>
+
+<ng-container *ngIf="shouldShow">
+  <div>Element one</div>
+  <div>Element Two</div>
+</ng-container>
+
+<!-- Use ngTemplateOutlet to display the current template -->
+<ng-container *ngTemplateOutlet="currentTemplate"></ng-container>
+
+<!-- displaying product card -->
+ <app-productcard>
+  <div productImage>
+    <img height="50" width="50" src="https://www.google.com/imgres?q=mobile&imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F713SsA7gftL._AC_UF1000%2C1000_QL80_.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.in%2FiPhone-16-256-GB-Ultramarine%2Fdp%2FB0DGJ8N32F&docid=bb0cvfS4zLRIDM&tbnid=hrrF_7xRR_i57M&vet=12ahUKEwjw9JWq8LGMAxUlcGwGHQC_J8YQM3oECBUQAA..i&w=818&h=1000&hcb=2&ved=2ahUKEwjw9JWq8LGMAxUlcGwGHQC_J8YQM3oECBUQAA" />
+  </div>
+  <div productInfo>
+    <h2>iPhone 16</h2>
+    <p>256 GB</p>
+    <p>Ultramarine</p>
+  </div>
+ </app-productcard>
+ <app-productcard>
+  <div productImage>
+    <img height="50" width="50" src="https://www.google.com/imgres?q=mobile&imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F713SsA7gftL._AC_UF1000%2C1000_QL80_.jpg&imgrefurl=https%3A%2F%2Fwww.amazon.in%2FiPhone-16-256-GB-Ultramarine%2Fdp%2FB0DGJ8N32F&docid=bb0cvfS4zLRIDM&tbnid=hrrF_7xRR_i57M&vet=12ahUKEwjw9JWq8LGMAxUlcGwGHQC_J8YQM3oECBUQAA..i&w=818&h=1000&hcb=2&ved=2ahUKEwjw9JWq8LGMAxUlcGwGHQC_J8YQM3oECBUQAA" />
+  </div>
+  <div productInfo>
+    <h2>iPhone 16</h2>
+    <p>256 GB</p>
+    <p>Ultramarine</p>
+  </div>
+ </app-productcard>
