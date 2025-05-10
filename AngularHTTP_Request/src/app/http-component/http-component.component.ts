@@ -24,4 +24,16 @@ export class HttpComponentComponent implements OnInit{
       console.error('Error fetching posts:', error);  
     });
   }
+
+    getPostsNew() {
+    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe({
+      next: (response: any) => {
+      console.log(response);
+      this.receivedPosts = response;
+      },
+      error: (error) => {
+      console.error('Error fetching posts:', error);
+      }
+    });
+  }
 }
