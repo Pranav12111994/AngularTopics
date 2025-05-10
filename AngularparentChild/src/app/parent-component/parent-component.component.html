@@ -1,0 +1,8 @@
+<p>parent-component works!</p>
+<app-child-component [parentData]="messageToChild" (childEvent)="handleChildEvent($event)"></app-child-component>
+<div>Data from child {{messageFromChild}}</div>
+
+<div>Data from service {{messageFromService}}</div>
+
+<button (click)="sendusingService()">Send Data to Child</button>
+

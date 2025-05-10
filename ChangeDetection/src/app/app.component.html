@@ -1,0 +1,9 @@
+<h2>Angular change detection example</h2>
+<p>Counter {{counter}}</p>
+<button (click)="increment()">Increment</button>
+<button (click)="asyncIncrement()">Async Increment</button>
+<button (click)="manualDetect()">manual Change Detection</button>
+
+
+<app-child [data]="counter"></app-child>
+<router-outlet />

@@ -1,0 +1,12 @@
+<!-- <div>{{textToUpperCase | uppercase}}</div>
+<div>{{customPipeText | camelcase}}</div> -->
+<div>Pure Pipe</div>
+<div>Original: {{textToUpperCase}}</div>
+<div>Transformed: {{textToUpperCase | purePipe}}</div>
+
+<div>Impure Pipe</div>
+<input type="text" [(ngModel)]="searchTerm" />
+<ul>
+  <li *ngFor="let item of items | impurePipe: searchTerm">{{item}}</li>
+</ul>
+<router-outlet />
